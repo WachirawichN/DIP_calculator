@@ -131,6 +131,7 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*0, y=yOffset*5)
+        self.button.bind('<Button-1>', self.event_tidlop)
         self.button = tk.Button(self.root, text="0",
                                 font=('Arial', fontSize),
                                 justify="center",
@@ -192,7 +193,8 @@ class MyCalculator:
         self.display.set(self.display.get() + "-")
     def event_equal(self, event):
         self.display.set(eval(self.display.get()))
-    
+    def event_tidlop(self, event):
+        self.display.set(float(self.display.get()) * -1)
 
 
 MyCalculator()

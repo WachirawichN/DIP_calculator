@@ -53,21 +53,25 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*0, y=yOffset*2)
+        self.button.bind('<Button-1>', self.event_7)
         self.button = tk.Button(self.root, text="8",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*1, y=yOffset*2)
+        self.button.bind('<Button-1>', self.event_8)
         self.button = tk.Button(self.root, text="9",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*2, y=yOffset*2)
+        self.button.bind('<Button-1>', self.event_9)
         self.button = tk.Button(self.root, text="*",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*3, y=yOffset*2)
+        self.button.bind('<Button-1>', self.event_Koon)
 
         #Row3
         self.button = tk.Button(self.root, text="4",
@@ -124,13 +128,13 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*1, y=yOffset*5)
-        self.button.bind('<Button-1>', self.event_wongleb)
+        self.button.bind('<Button-1>', self.event_0)
         self.button = tk.Button(self.root, text=".",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*2, y=yOffset*5)
-        self.button.bind('<Button-1>', self.event_wongleb)
+        self.button.bind('<Button-1>', self.event_dot)
         self.button = tk.Button(self.root, text="=",
                                 font=('Arial', fontSize),
                                 justify="center",
@@ -147,9 +151,17 @@ class MyCalculator:
         self.display.set(self.display.get() + "%")
     def event_divide(self, event):
         self.display.set(self.display.get() + "/")
-    def event_divide(self, event):
+    def event_0(self, event):
         self.display.set(self.display.get() + "0")
-    def event_divide(self, event):
+    def event_dot(self, event):
         self.display.set(self.display.get() + ".")
+    def event_7(self, event):
+        self.display.set(self.display.get() + "7")
+    def event_8(self, event):
+        self.display.set(self.display.get() + "8")
+    def event_9(self, event):
+        self.display.set(self.display.get() + "9")
+    def event_koon(self, event):
+        self.display.set(self.display.get() + "*")
 
 MyCalculator()

@@ -1,6 +1,9 @@
 import tkinter as tk
 
 class MyCalculator:
+
+    title = "MyCalculator"
+
     def __init__(self):
         self.root = tk.Tk()
         self.root.geometry("200x300")

@@ -148,6 +148,7 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*3, y=yOffset*5)
+        self.button.bind('<Button-1>', self.event_equal)
 
         self.root.mainloop()
 
@@ -189,6 +190,8 @@ class MyCalculator:
         self.display.set(self.display.get() + "6")
     def event_lob(self, event):
         self.display.set(self.display.get() + "-")
+    def event_equal(self, event):
+        self.display.set(eval(self.display.get()))
     
 
 

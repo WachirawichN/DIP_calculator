@@ -1,6 +1,9 @@
 import tkinter as tk
 
 class MyCalculator:
+
+    title = "MyCalculator"
+
     def __init__(self):
         height = 6
         width = 12

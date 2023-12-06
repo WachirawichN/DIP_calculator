@@ -71,7 +71,7 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*3, y=yOffset*2)
-        self.button.bind('<Button-1>', self.event_Koon)
+        self.button.bind('<Button-1>', self.event_koon)
 
         #Row3
         self.button = tk.Button(self.root, text="4",

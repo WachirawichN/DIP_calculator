@@ -97,21 +97,25 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*0, y=yOffset*4)
+        self.button.bind('<Button-1>', self.event_1)
         self.button = tk.Button(self.root, text="2",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*1, y=yOffset*4)
+        self.button.bind('<Button-1>', self.event_2)
         self.button = tk.Button(self.root, text="3",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*2, y=yOffset*4)
+        self.button.bind('<Button-1>', self.event_3)
         self.button = tk.Button(self.root, text="+",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*3, y=yOffset*4)
+        self.button.bind('<Button-1>', self.event_buak)
 
         #Row5
         self.button = tk.Button(self.root, text="+/-",
@@ -149,7 +153,15 @@ class MyCalculator:
         self.display.set(self.display.get() + "/")
     def event_divide(self, event):
         self.display.set(self.display.get() + "0")
-     def event_divide(self, event):
+    def event_divide(self, event):
         self.display.set(self.display.get() + ".")
+    def event_1(self, event):
+        self.display.set(self.display.get() + "1")
+    def event_2(self, event):
+        self.display.set(self.display.get() + "2")
+    def event_3(self, event):
+        self.display.set(self.display.get() + "3")
+    def event_buak(self, event):
+        self.display.set(self.display.get() + "+")
 
 MyCalculator()

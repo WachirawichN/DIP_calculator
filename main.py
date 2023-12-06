@@ -124,13 +124,13 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*1, y=yOffset*5)
-        self.button.bind('<Button-1>', self.event_wongleb)
+        self.button.bind('<Button-1>', self.event_zero)
         self.button = tk.Button(self.root, text=".",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*2, y=yOffset*5)
-        self.button.bind('<Button-1>', self.event_wongleb)
+        self.button.bind('<Button-1>', self.event_dot)
         self.button = tk.Button(self.root, text="=",
                                 font=('Arial', fontSize),
                                 justify="center",
@@ -147,9 +147,9 @@ class MyCalculator:
         self.display.set(self.display.get() + "%")
     def event_divide(self, event):
         self.display.set(self.display.get() + "/")
-    def event_divide(self, event):
+    def event_zero(self, event):
         self.display.set(self.display.get() + "0")
-    def event_divide(self, event):
+    def event_dot(self, event):
         self.display.set(self.display.get() + ".")
 
 MyCalculator()

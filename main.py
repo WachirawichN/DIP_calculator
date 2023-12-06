@@ -153,7 +153,7 @@ class MyCalculator:
         self.display.set(self.display.get() + "/")
     def event_zero(self, event):
         self.display.set(self.display.get() + "0")
-    def event_divide(self, event):
+    def event_dot(self, event):
         self.display.set(self.display.get() + ".")
     def event_4(self, event):
         self.display.set(self.display.get() + "4")

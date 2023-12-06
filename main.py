@@ -140,7 +140,7 @@ class MyCalculator:
         self.root.mainloop()
 
     def event_c(self, event):
-        self.display.set(self.display.get() + "c")
+        self.display.set("")
     def event_wongleb(self, event):
         self.display.set(self.display.get() + "()")
     def event_percent(self, event):
@@ -149,7 +149,7 @@ class MyCalculator:
         self.display.set(self.display.get() + "/")
     def event_divide(self, event):
         self.display.set(self.display.get() + "0")
-     def event_divide(self, event):
+    def event_divide(self, event):
         self.display.set(self.display.get() + ".")
 
 MyCalculator()

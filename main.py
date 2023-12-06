@@ -14,9 +14,10 @@ class MyCalculator:
         self.root = tk.Tk()
         self.root.geometry("400x600")
         self.root.title("Epic gaming calculator")
+        self.display = tk.StringVar()
 
         #Row0
-        self.label = tk.Label(self.root, text="whats up Beijing",
+        self.label = tk.Label(self.root, textvariable=self.display,
                               font=('Comic Sans MS', 10))
         self.label.place(x=xOffet*0, y=yOffset*0)
 
@@ -26,21 +27,25 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*0, y=yOffset*1)
+        self.button.bind('<Button-1>', self.event_c)
         self.button = tk.Button(self.root, text="()",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*1, y=yOffset*1)
+        self.button.bind('<Button-1>', self.event_wongleb)
         self.button = tk.Button(self.root, text="%",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*2, y=yOffset*1)
+        self.button.bind('<Button-1>', self.event_percent)
         self.button = tk.Button(self.root, text="/",
                                 font=('Arial', fontSize),
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*3, y=yOffset*1)
+        self.button.bind('<Button-1>', self.event_divide)
 
         #Row2
         self.button = tk.Button(self.root, text="7",
@@ -131,5 +136,14 @@ class MyCalculator:
         self.button.place(x=xOffet*3, y=yOffset*5)
 
         self.root.mainloop()
+
+    def event_c(self, event):
+        self.display.set(self.display.get() + "c")
+    def event_wongleb(self, event):
+        self.display.set(self.display.get() + "()")
+    def event_percent(self, event):
+        self.display.set(self.display.get() + "%")
+    def event_divide(self, event):
+        self.display.set(self.display.get() + "/")
 
 MyCalculator()

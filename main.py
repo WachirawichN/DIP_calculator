@@ -136,7 +136,6 @@ class MyCalculator:
                                 justify="center",
                                 width=width, height=height)
         self.button.place(x=xOffet*1, y=yOffset*5)
-        self.button.bind('<Button-1>', self.event_0)
         self.button.bind('<Button-1>', self.event_zero)
         self.button = tk.Button(self.root, text=".",
                                 font=('Arial', fontSize),

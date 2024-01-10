@@ -204,6 +204,19 @@ class MyCalculator:
     #=
     def event_equal(self, event):
         self.display.set(eval(self.display.get()))
+
+    #+/-
+    def event_tidlop(self, event):
+        numGroup = re.split(r'\s*([+\-*/])\s*', self.display.get())
+        try:
+            percent = float(numGroup[len(numGroup) - 1]) * (-1)
+            output = ""
+            for i in range(len(numGroup) - 1):
+                output += numGroup[i]
+            output += "(" + str(percent) + ")"
+            self.display.set(output)
+        except:
+            pass
     
 
    

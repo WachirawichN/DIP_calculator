@@ -154,10 +154,6 @@ class MyCalculator:
 
         self.root.mainloop()
 
-    def event_c(self, event):
-        self.display.set("")
-    def event_wongleb(self, event):
-        self.display.set(self.display.get() + "()")
     def event_percent(self, event):
         self.display.set(self.display.get() + "%")
     def event_divide(self, event):
@@ -192,10 +188,6 @@ class MyCalculator:
         self.display.set(self.display.get() + "6")
     def event_lob(self, event):
         self.display.set(self.display.get() + "-")
-    def event_equal(self, event):
-        self.display.set(eval(self.display.get()))
-    def event_tidlop(self, event):
-        self.display.set(float(self.display.get()) * -1)
 
     #AC
     def event_c(self, event):
@@ -217,6 +209,23 @@ class MyCalculator:
             self.display.set(output)
         except:
             pass
+
+    #()
+    def event_wongleb(self, event):
+        numGroup = list(self.display.get())
+        openCount = 0
+        closeCount = 0
+        for i in range(len(numGroup)):
+            if numGroup[i] == "(":
+                openCount += 1
+            elif numGroup[i] == ")":
+                closeCount += 1
+        if openCount == 0 or openCount == closeCount:
+            if len(numGroup) > 0:
+                self.display.set(self.display.get() + "*")
+            self.display.set(self.display.get() + "(")
+        elif openCount > closeCount and not numGroup[len(numGroup) - 1] in ["+", "-", "*", "/", "."]:
+            self.display.set(self.display.get() + ")")
     #Percent
     def event_percent(self, event):
         numGroup = re.split(r'\s*([+\-*/])\s*', self.display.get())

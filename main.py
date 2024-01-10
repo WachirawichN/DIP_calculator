@@ -217,7 +217,24 @@ class MyCalculator:
             self.display.set(output)
         except:
             pass
-    
+    #Percent
+    def event_percent(self, event):
+        numGroup = re.split(r'\s*([+\-*/])\s*', self.display.get())
+        try:
+            percent = float(numGroup[len(numGroup) - 1]) / 100
+            output = ""
+            for i in range(len(numGroup) - 1):
+                output += numGroup[i]
+            output += str(percent)
+            self.display.set(output)
+        except:
+            pass
+    #.
+    def event_dot(self, event):
+        numGroup = re.split(r'\s*([+\-*/])\s*', self.display.get())
+        print(numGroup)
+        if not "." in numGroup[len(numGroup) - 1]:
+            self.display.set(self.display.get() + ".")
 
    
 

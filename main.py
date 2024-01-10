@@ -1,5 +1,5 @@
 import tkinter as tk
-import re
+import re 
 
 class MyCalculator:
 
@@ -226,6 +226,7 @@ class MyCalculator:
             self.display.set(self.display.get() + "(")
         elif openCount > closeCount and not numGroup[len(numGroup) - 1] in ["+", "-", "*", "/", "."]:
             self.display.set(self.display.get() + ")")
+    
     #Percent
     def event_percent(self, event):
         numGroup = re.split(r'\s*([+\-*/])\s*', self.display.get())

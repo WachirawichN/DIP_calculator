@@ -201,6 +201,11 @@ class MyCalculator:
     def event_c(self, event):
         self.display.set("")
 
+    #=
+    def event_equal(self, event):
+        self.display.set(eval(self.display.get()))
+    
+
    
 
 MyCalculator()

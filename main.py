@@ -259,5 +259,4 @@ class MyCalculator:
         if not "." in numGroup[len(numGroup) - 1]:
             self.display.set(self.display.get() + ".")
 
-
 MyCalculator()

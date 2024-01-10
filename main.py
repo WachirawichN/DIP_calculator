@@ -197,6 +197,10 @@ class MyCalculator:
     def event_tidlop(self, event):
         self.display.set(float(self.display.get()) * -1)
 
+    #AC
+    def event_c(self, event):
+        self.display.set("")
+
    
 
 MyCalculator()

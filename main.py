@@ -154,40 +154,15 @@ class MyCalculator:
 
         self.root.mainloop()
 
-    def event_percent(self, event):
-        self.display.set(self.display.get() + "%")
-    def event_divide(self, event):
-        self.display.set(self.display.get() + "/")
-    def event_zero(self, event):
-        self.display.set(self.display.get() + "0")
-    def event_dot(self, event):
-        self.display.set(self.display.get() + ".")
-    def event_7(self, event):
-        self.display.set(self.display.get() + "7")
-    def event_8(self, event):
-        self.display.set(self.display.get() + "8")
-    def event_9(self, event):
-        self.display.set(self.display.get() + "9")
-    def event_koon(self, event):
-        self.display.set(self.display.get() + "*")
-    def event_1(self, event):
-        self.display.set(self.display.get() + "1")
-    def event_2(self, event):
-        self.display.set(self.display.get() + "2")
-    def event_3(self, event):
-        self.display.set(self.display.get() + "3")
+    #+, -
     def event_buak(self, event):
-        self.display.set(self.display.get() + "+")
-    def event_dot(self, event):
-        self.display.set(self.display.get() + ".")
-    def event_4(self, event):
-        self.display.set(self.display.get() + "4")
-    def event_5(self, event):
-        self.display.set(self.display.get() + "5")
-    def event_6(self, event):
-        self.display.set(self.display.get() + "6")
+        numGroup = list(self.display.get())
+        if len(numGroup) != 0 and not numGroup[len(numGroup) - 1] in ["+", "-", "*", "/", "."]:
+            self.display.set(self.display.get() + "+")
     def event_lob(self, event):
-        self.display.set(self.display.get() + "-")
+        numGroup = list(self.display.get())
+        if len(numGroup) != 0 and not numGroup[len(numGroup) - 1] in ["+", "-", "*", "/", "."]:
+            self.display.set(self.display.get() + "-")
 
     #AC
     def event_c(self, event):
